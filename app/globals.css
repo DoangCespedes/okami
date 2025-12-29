@@ -1,0 +1,246 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* 
+ * ITALVEN x OKAMI - Automotive Parts Platform
+ * Official OKAMI Brand Colors from Brand Guidelines
+ * PANTONE 185 C - Racing Mark Race Typography
+ */
+
+:root {
+  /* OKAMI Brand Colors - Primary Red #F10826 and Black #090909 */
+  --brand-okami-red: oklch(0.55 0.26 25); /* OKAMI Red #F10826 */
+  --brand-okami-black: oklch(0.15 0 0); /* OKAMI Black #090909 */
+  --brand-okami-red-dark: oklch(0.45 0.26 25); /* Darker red variant */
+  --brand-okami-red-light: oklch(0.65 0.26 25); /* Lighter red variant */
+
+  /* Supporting Colors */
+  --brand-success: oklch(0.6 0.15 145);
+  --brand-warning: oklch(0.75 0.15 85);
+  --brand-error: var(--brand-okami-red);
+
+  /* Neutral Colors */
+  --neutral-50: oklch(0.99 0 0);
+  --neutral-100: oklch(0.97 0 0);
+  --neutral-200: oklch(0.93 0 0);
+  --neutral-300: oklch(0.85 0 0);
+  --neutral-400: oklch(0.7 0 0);
+  --neutral-500: oklch(0.55 0 0);
+  --neutral-600: oklch(0.45 0 0);
+  --neutral-700: oklch(0.35 0 0);
+  --neutral-800: oklch(0.25 0 0);
+  --neutral-900: var(--brand-okami-black);
+
+  /* Updated semantic tokens to use OKAMI branding */
+  --background: var(--neutral-50);
+  --foreground: var(--brand-okami-black);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--brand-okami-black);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--brand-okami-black);
+  --primary: var(--brand-okami-red);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: var(--brand-okami-black);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-500);
+  --accent: var(--brand-okami-red-light);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: var(--brand-okami-red);
+  --destructive-foreground: oklch(1 0 0);
+  --border: var(--neutral-200);
+  --input: var(--neutral-200);
+  --ring: var(--brand-okami-red);
+
+  /* Chart Colors */
+  --chart-1: var(--brand-okami-red);
+  --chart-2: var(--brand-okami-black);
+  --chart-3: var(--brand-okami-red-light);
+  --chart-4: var(--brand-success);
+  --chart-5: var(--brand-warning);
+
+  /* Border Radius */
+  --radius: 0.5rem;
+
+  /* Sidebar Tokens */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: var(--brand-okami-black);
+  --sidebar-primary: var(--brand-okami-red);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: var(--neutral-100);
+  --sidebar-accent-foreground: var(--brand-okami-black);
+  --sidebar-border: var(--neutral-200);
+  --sidebar-ring: var(--brand-okami-red);
+}
+
+.dark {
+  --background: var(--brand-okami-black);
+  --foreground: var(--neutral-50);
+  --card: var(--neutral-800);
+  --card-foreground: var(--neutral-50);
+  --popover: var(--neutral-800);
+  --popover-foreground: var(--neutral-50);
+  --primary: var(--brand-okami-red);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: var(--neutral-800);
+  --secondary-foreground: var(--neutral-50);
+  --muted: var(--neutral-800);
+  --muted-foreground: var(--neutral-400);
+  --accent: var(--brand-okami-red-light);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: var(--brand-okami-red);
+  --destructive-foreground: oklch(1 0 0);
+  --border: var(--neutral-700);
+  --input: var(--neutral-700);
+  --ring: var(--brand-okami-red);
+  --sidebar: var(--neutral-800);
+  --sidebar-foreground: var(--neutral-50);
+  --sidebar-primary: var(--brand-okami-red);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: var(--neutral-700);
+  --sidebar-accent-foreground: var(--neutral-50);
+  --sidebar-border: var(--neutral-700);
+  --sidebar-ring: var(--brand-okami-red);
+}
+
+@theme inline {
+  --font-sans: "Inter", "Geist", "Geist Fallback", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+
+  /* Color tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Radius tokens */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Sidebar tokens */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+/* Custom animations for automotive feel */
+/* Added OKAMI-inspired animations for dynamic feel */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(241, 8, 38, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(241, 8, 38, 0.6);
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-zoom-in {
+  animation: zoom-in 0.5s ease-out;
+}
+
+/* Gradient patterns for OKAMI branding */
+.bg-okami-gradient {
+  background: linear-gradient(135deg, var(--brand-okami-red) 0%, var(--brand-okami-red-dark) 100%);
+}
+
+.bg-okami-gradient-radial {
+  background: radial-gradient(circle at top right, var(--brand-okami-red) 0%, var(--brand-okami-black) 100%);
+}
